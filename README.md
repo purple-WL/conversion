@@ -1,6 +1,6 @@
 # conversion
 
-凑合给开发看吧，至少是中文报告
+凑合给开发看吧，至少是中文报告,使用之前下载cnnvd漏洞数据xml文件，放到cnnvd_xml文件夹
 
 Usage: python cnnvd.py <dependency-check_json_file_path>
 
