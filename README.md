@@ -4,8 +4,8 @@
 
 Usage: python cnnvd.py <dependency-check_json_file_path>
 
+<img width="1059" alt="企业微信20240618-104415@2x" src="https://github.com/purple-WL/conversion/assets/63894044/81b78b1a-0dd8-455f-a0e7-4470afdf396e">
+
 报告只有一些简单的漏洞信息，没办法，cnnvd给的就这些
 
-<img width="692" alt="image" src="https://github.com/purple-WL/conversion/assets/63894044/b662f850-d83f-4137-b50e-26a5f539e4a5">
-
-<img width="1129" alt="image" src="https://github.com/purple-WL/conversion/assets/63894044/66865d1f-a781-423a-937e-cef978f61c94">
+<img width="1077" alt="image" src="https://github.com/purple-WL/conversion/assets/63894044/e2248f37-fa6e-4159-99f3-bc73fcbfbcc9">
