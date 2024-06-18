@@ -64,7 +64,30 @@ def word_result(jsonname):
     vulnerabilities = dependency_check(jsonname)
     doc = Document()
     doc.add_heading('dependency-check检查报告', level=1)
-    #doc.add_picture('pie_chart.png', width=Inches(4))
+    doc.add_paragraph("漏洞列表：")
+    Len = (len(vulnerabilities))
+    table = doc.add_table(rows=Len + 1, cols=3)
+    table.style = 'Table Grid'
+    table.alignment = WD_TABLE_ALIGNMENT.CENTER
+    hdr_cells = table.rows[0].cells
+    hdr_cells[0].text = 'jar名称'
+    hdr_cells[1].text = '漏洞编号'
+    hdr_cells[2].text = '危害等级'
+    prev_jar = None
+    start_row = 1
+    for i, row_data in enumerate(vulnerabilities):
+        row_cells = table.rows[start_row + i].cells
+        row_cells[1].text = row_data['cve']
+        if row_data['severity'] == "HIGH":
+            row_cells[2].text = "高危"
+        elif row_data['severity'] == "MEDIUM":
+            row_cells[2].text = "中危"
+        if row_data['jar'] != prev_jar:
+            row_cells[0].text = row_data['jar']
+            prev_jar = row_data['jar']
+        else:
+            #         # 如果当前jar名称与上一行相同，则合并单元格
+            table.cell(start_row + i, 0).merge(table.cell(start_row + i - 1, 0))
     jar_path_dict = {}
     for vuln in vulnerabilities:
         jar = vuln['jar']
